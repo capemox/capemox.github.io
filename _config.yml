@@ -29,10 +29,10 @@ plugins:
   - jekyll-seo-tag
   - jektex
 
-jektex:
-  cache_dir: ".jektex-cache"
-  ignore: ["*.xml"]
-  silent: false
-  macros:
-    - ["\\Q", "\\mathbb{Q}"]
-    - ["\\C", "\\mathbb{C}"]
+# jektex:
+#   cache_dir: ".jektex-cache"
+#   ignore: ["*.xml"]
+#   silent: false
+#   macros:
+#     - ["\\Q", "\\mathbb{Q}"]
+#     - ["\\C", "\\mathbb{C}"]
