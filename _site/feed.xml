@@ -1,4 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-01-26T22:33:15+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">gautham | capemox</title><subtitle>capemox&apos;s site!
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-01-27T07:18:39+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">gautham | capemox</title><subtitle>capemox&apos;s site!
 </subtitle><author><name>capemox</name></author><entry><title type="html">N-grams: The dumbest language models</title><link href="http://localhost:4000/ngrams.html" rel="alternate" type="text/html" title="N-grams: The dumbest language models" /><published>2025-01-26T00:00:00+05:30</published><updated>2025-01-26T00:00:00+05:30</updated><id>http://localhost:4000/ngrams</id><content type="html" xml:base="http://localhost:4000/ngrams.html"><![CDATA[<p>N-grams are some of the simplest language models out there, and are pretty easy to understand (compared to LLMs at least). In this article, I’ll try giving you an inuitive understanding of N-gram LMs, while also explaining perplexity, an evaluation measure for such LMs, and also the inspiration for <a href="https://www.perplexity.ai">perplexity.ai</a>! Stay tuned for its release!</p>
 
-<hr />]]></content><author><name>capemox</name></author><summary type="html"><![CDATA[N-grams are some of the simplest language models out there, and are pretty easy to understand (compared to LLMs at least). In this article, I’ll try giving you an inuitive understanding of N-gram LMs, while also explaining perplexity, an evaluation measure for such LMs, and also the inspiration for perplexity.ai! Stay tuned for its release!]]></summary></entry></feed>
+<hr />
+<!-- ![n-gram-1](/media/n-grams/n_gram_1.webp) -->
+
+<h2 id="back-to-basics-counting">Back to Basics: Counting</h2>
+
+<p>Let’s say you want to know what’s the weather like tomorrow. You <em>can</em> use state-of-the-art atmospheric models that solve numerous partial differential equations on big mainframe computers. But you can also, you know, just predict that it will rain tomorrow, because it rained today and yesterday.</p>
+
+<p>This more or less highlights the difference between how LLMs (or the transformer model behind LLMs) work compared to N-grams. While the analogy isn’t <em>exactly</em> correct, it highlights just how simple N-grams are to grasp and build, and it also tells you that they’re probably not very powerful.</p>
+
+<p><img src="https://imgs.xkcd.com/comics/10_day_forecast_2x.png" alt="xkcd" /></p>
+
+<p>Language models are typically used in an <strong>autoregressive manner</strong>: which means it predicts the next word given context words, and it adds the predicted word to its context to predict the <em>next</em> word, and on and on. This is how all LMs work, be it N-grams or GPT.</p>
+
+<p>The difference lies in <em>how</em> these models predict what the next word is. Transformers do this in a pretty complex process, at whos heart lies a mathematical attention mechanism, but we won’t go into that today.</p>
+
+<p>N-grams, by contrast, predict the next word based on naive frequency of occurence. The word that <strong>occurs the most frequently</strong> with the previous \(N-1\) words, simply, is the predicted word!</p>
+
+<p>This \(N-1\) is related to the \(N\) in N-grams:</p>
+<ul>
+  <li>A 1-gram (or unigram) predicts words randomly (0 context words)</li>
+  <li>A 2-gram (or bigram) predicts the word that occurs the most after the last word (\(2-1=1\)) in the sequence</li>
+  <li>A 3-gram (or trigram) predicts the word that occurs the most after the last two words (\(3-1=2\)) in the sequence</li>
+</ul>
+
+<p>And so on.</p>
+
+<h3 id="a-touch-of-math">A Touch of Math</h3>
+<p>Let’s consider a sequence of words in a sentence: \(w_1, w_2,..., w_{n-1}\) and our N-gram’s job is to predict what \(w_n\) is. Let us also define a <strong>vocabulary</strong> for our N-gram: the set of all possible words it can predict, denoted by \(V\).</p>
+
+<p>The unigram case is pretty trivial, so let’s ignore it. Bigrams, however, are far more interesting. With what we’ve defined so far:</p>
+
+<blockquote>
+  <p>Bigrams predict a word \(w_n\) from \(V\) such that <br />
+Count(\(w_{n-1}\), \(w_n\)) is maximum.</p>
+</blockquote>
+
+<p>All the <code class="language-plaintext highlighter-rouge">Count</code> function does is count the occurences of words within it in that order.</p>]]></content><author><name>capemox</name></author><summary type="html"><![CDATA[N-grams are some of the simplest language models out there, and are pretty easy to understand (compared to LLMs at least). In this article, I’ll try giving you an inuitive understanding of N-gram LMs, while also explaining perplexity, an evaluation measure for such LMs, and also the inspiration for perplexity.ai! Stay tuned for its release!]]></summary></entry></feed>
