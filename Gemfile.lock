@@ -101,6 +101,7 @@ DEPENDENCIES
   base64
   bigdecimal
   csv
+  jekyll-sass-converter
   kramdown-parser-gfm
   logger
   no-style-please!
