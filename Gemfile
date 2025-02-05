@@ -8,6 +8,9 @@ gem "csv"
 gem "bigdecimal"
 gem "base64"
 gem "logger"
-gem "jekyll-sass-converter"
+gem "jekyll", "~> 3.10.0"
+gem "jekyll-feed", "~> 0.17.0"
+gem "jekyll-seo-tag", "~> 2.8.0"
+gem "jekyll-sass-converter", "~> 1.0"
 
-gemspec
+# gemspec

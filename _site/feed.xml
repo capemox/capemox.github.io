@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-02-02T13:31:09+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">gautham | capemox</title><subtitle>capemox&apos;s site!
-</subtitle><author><name>capemox</name></author><entry><title type="html">How to get rid of the tab bar on firefox</title><link href="http://localhost:4000/firefox-remove-tabbar.html" rel="alternate" type="text/html" title="How to get rid of the tab bar on firefox" /><published>2025-02-02T00:00:00+05:30</published><updated>2025-02-02T00:00:00+05:30</updated><id>http://localhost:4000/firefox-remove-tabbar</id><content type="html" xml:base="http://localhost:4000/firefox-remove-tabbar.html"><![CDATA[<p>This is a post mainly for my reference, since I always seem to get a bit lost figuring out how to do this. Essentially, I prefer using a firefox extension for a side tab bar (I use <a href="https://addons.mozilla.org/en-US/firefox/addon/sidebery/">Sidebery</a>) and its shortcuts to manage my tabs. My browser setup looks a little bit like this:</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-02-05T08:49:12+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">gautham | capemox</title><subtitle>capemox&apos;s site!
+</subtitle><author><name>capemox</name></author><entry><title type="html">ModernBERT: What makes it so cool</title><link href="http://localhost:4000/modern-bert.html" rel="alternate" type="text/html" title="ModernBERT: What makes it so cool" /><published>2025-02-03T00:00:00+05:30</published><updated>2025-02-03T00:00:00+05:30</updated><id>http://localhost:4000/modern-bert</id><content type="html" xml:base="http://localhost:4000/modern-bert.html"><![CDATA[]]></content><author><name>capemox</name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">How to get rid of the tab bar on firefox</title><link href="http://localhost:4000/firefox-remove-tabbar.html" rel="alternate" type="text/html" title="How to get rid of the tab bar on firefox" /><published>2025-02-02T00:00:00+05:30</published><updated>2025-02-02T00:00:00+05:30</updated><id>http://localhost:4000/firefox-remove-tabbar</id><content type="html" xml:base="http://localhost:4000/firefox-remove-tabbar.html"><![CDATA[<p>This is a post mainly for my reference, since I always seem to get a bit lost figuring out how to do this. Essentially, I prefer using a Firefox extension for a side tab bar (I use <a href="https://addons.mozilla.org/en-US/firefox/addon/sidebery/">Sidebery</a>) and its shortcuts to manage my tabs. My browser setup looks a little bit like this:</p>
 
 <p><img src="/media/tabbar/tabbar_ss.png" alt="tabbar-ss" /></p>
 
@@ -7,25 +7,25 @@
 
 <hr />
 
-<p>I am currently running Firefox version 134.0.2, but it should still work for most previous versions of Firefox. Unless your Firefox version is <em>really</em> old (pre 2019), I think you might get better mileage out of an older guide.</p>
+<p>I am currently running Firefox version 134.0.2, but it should still work for most previous versions of Firefox. If your Firefox version is <em>really</em> old (pre 2019), I think you might get better mileage out of an older guide.</p>
 
 <h2 id="step-1-choose-your-tab-manager-alternative">Step 1: Choose your Tab Manager Alternative</h2>
 <p>It’s better to activate your alternative tab bar manager before disabling the default tab bar. Personally, I use Sidebery, but alternative extensions exist that you can try.</p>
 
 <h2 id="step-2-allowing-firefox-customization-via-stylesheets">Step 2: Allowing Firefox Customization via Stylesheets</h2>
-<p>We will write a tiny bit of CSS to disable tabs, and we need to tell Firefox this. To do this:</p>
+<p>We will need to write a tiny bit of CSS to disable tabs, and so we need to inform Firefox to enable CSS customization. To do this:</p>
 <ol>
-  <li>Search <code class="language-plaintext highlighter-rouge">about:config</code> on Firefox. It may give you a warning to be cautious, but proceed to the next page</li>
+  <li>Search <code class="language-plaintext highlighter-rouge">about:config</code> on Firefox. It may give you a warning, but proceed to the next page.</li>
   <li>In the search bar, search for <code class="language-plaintext highlighter-rouge">toolkit.legacyUserProfileCustomizations.stylesheets</code>. When the field pops up, set it to <code class="language-plaintext highlighter-rouge">true</code>.</li>
 </ol>
 
 <h2 id="step-3-hiding-the-tab-bar-via-css">Step 3: Hiding The Tab Bar via CSS</h2>
-<p>Now that Firefox accepts styles via CSS, we need to write the actualy CSS and store it somewhere Firefox can easily find it and apply it on your profile.</p>
+<p>Now that Firefox accepts styles via CSS, we need to write the CSS and store it somewhere Firefox can easily find.</p>
 
 <ol>
   <li>Search <code class="language-plaintext highlighter-rouge">about:support</code> on Firefox. Search for the words “Profile Folder” in the page.</li>
   <li>You’ll find a directory path next to “Profile Folder” that ends in something like <code class="language-plaintext highlighter-rouge">abcd1234.default-release</code>. Navigate to the directory using Finder/File Explorer/terminal</li>
-  <li>Create a new directory named <code class="language-plaintext highlighter-rouge">chrome</code>. Make sure its all lowercase. In the <code class="language-plaintext highlighter-rouge">chrome</code> directory, create a file called <code class="language-plaintext highlighter-rouge">userChrome.css</code>.</li>
+  <li>Create a new directory named <code class="language-plaintext highlighter-rouge">chrome</code> in that directory. In the <code class="language-plaintext highlighter-rouge">chrome</code> directory, create a file called <code class="language-plaintext highlighter-rouge">userChrome.css</code>. These names are case sensitive, so be careful.</li>
   <li>In <code class="language-plaintext highlighter-rouge">userChrome.css</code>, paste the following:
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#tabbrowser-tabs {
  visibility: collapse;
@@ -43,42 +43,4 @@
 
 <hr />
 
-<p>On restarting your browser, you shouldn’t be able to see the default Firefox tab bar! In case its still there, you’ll have to Google around, because of version or platform differences. Thanks for reading!</p>]]></content><author><name>capemox</name></author><summary type="html"><![CDATA[This is a post mainly for my reference, since I always seem to get a bit lost figuring out how to do this. Essentially, I prefer using a firefox extension for a side tab bar (I use Sidebery) and its shortcuts to manage my tabs. My browser setup looks a little bit like this:]]></summary></entry><entry><title type="html">N-grams: The dumbest language models</title><link href="http://localhost:4000/ngrams.html" rel="alternate" type="text/html" title="N-grams: The dumbest language models" /><published>2025-01-26T00:00:00+05:30</published><updated>2025-01-26T00:00:00+05:30</updated><id>http://localhost:4000/ngrams</id><content type="html" xml:base="http://localhost:4000/ngrams.html"><![CDATA[<p>N-grams are some of the simplest language models out there, and are pretty easy to understand (compared to LLMs at least). In this article, I’ll try giving you an inuitive understanding of N-gram LMs, while also explaining perplexity, an evaluation measure for such LMs, and also the inspiration for <a href="https://www.perplexity.ai">perplexity.ai</a>! Stay tuned for its release!</p>
-
-<hr />
-<!-- ![n-gram-1](/media/n-grams/n_gram_1.webp) -->
-
-<h2 id="back-to-basics-counting">Back to Basics: Counting</h2>
-
-<p>Let’s say you want to know what’s the weather like tomorrow. You <em>can</em> use state-of-the-art atmospheric models that solve numerous partial differential equations on big mainframe computers. But you can also, you know, just predict that it will rain tomorrow, because it rained today and yesterday.</p>
-
-<p>This more or less highlights the difference between how LLMs (or the transformer model behind LLMs) work compared to N-grams. While the analogy isn’t <em>exactly</em> correct, it highlights just how simple N-grams are to grasp and build, and it also tells you that they’re probably not very powerful.</p>
-
-<p><img src="https://imgs.xkcd.com/comics/10_day_forecast_2x.png" alt="xkcd" /></p>
-
-<p>Language models are typically used in an <strong>autoregressive manner</strong>: which means it predicts the next word given context words, and it adds the predicted word to its context to predict the <em>next</em> word, and on and on. This is how all LMs work, be it N-grams or GPT.</p>
-
-<p>The difference lies in <em>how</em> these models predict what the next word is. Transformers do this in a pretty complex process, at whos heart lies a mathematical attention mechanism, but we won’t go into that today.</p>
-
-<p>N-grams, by contrast, predict the next word based on naive frequency of occurence. The word that <strong>occurs the most frequently</strong> with the previous \(N-1\) words, simply, is the predicted word!</p>
-
-<p>This \(N-1\) is related to the \(N\) in N-grams:</p>
-<ul>
-  <li>A 1-gram (or unigram) predicts words randomly (0 context words)</li>
-  <li>A 2-gram (or bigram) predicts the word that occurs the most after the last word (\(2-1=1\)) in the sequence</li>
-  <li>A 3-gram (or trigram) predicts the word that occurs the most after the last two words (\(3-1=2\)) in the sequence</li>
-</ul>
-
-<p>And so on.</p>
-
-<h3 id="a-touch-of-math">A Touch of Math</h3>
-<p>Let’s consider a sequence of words in a sentence: \(w_1, w_2,..., w_{n-1}\) and our N-gram’s job is to predict what \(w_n\) is. Let us also define a <strong>vocabulary</strong> for our N-gram: the set of all possible words it can predict, denoted by \(V\).</p>
-
-<p>The unigram case is pretty trivial, so let’s ignore it. Bigrams, however, are far more interesting. With what we’ve defined so far:</p>
-
-<blockquote>
-  <p>Bigrams predict a word \(w_n\) from \(V\) such that <br />
-Count(\(w_{n-1}\), \(w_n\)) is maximum.</p>
-</blockquote>
-
-<p>All the <code class="language-plaintext highlighter-rouge">Count</code> function does is count the occurrences of words within it in that order.</p>]]></content><author><name>capemox</name></author><summary type="html"><![CDATA[N-grams are some of the simplest language models out there, and are pretty easy to understand (compared to LLMs at least). In this article, I’ll try giving you an inuitive understanding of N-gram LMs, while also explaining perplexity, an evaluation measure for such LMs, and also the inspiration for perplexity.ai! Stay tuned for its release!]]></summary></entry></feed>
+<p>On restarting your browser, you shouldn’t be able to see the default Firefox tab bar! In case its still there, you’ll have to Google around, because of version or platform differences. Thanks for reading!</p>]]></content><author><name>capemox</name></author><summary type="html"><![CDATA[This is a post mainly for my reference, since I always seem to get a bit lost figuring out how to do this. Essentially, I prefer using a Firefox extension for a side tab bar (I use Sidebery) and its shortcuts to manage my tabs. My browser setup looks a little bit like this:]]></summary></entry></feed>
