@@ -74,7 +74,7 @@ body {
 
 .site-header .container {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
 }
 
@@ -88,7 +88,6 @@ body {
   font-family: "EB Garamond", Georgia, serif;
   font-size: 1.2rem;
   font-weight: 500;
-  line-height: 1;
   color: var(--text);
   text-decoration: none;
   letter-spacing: -0.01em;
