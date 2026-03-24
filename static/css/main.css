@@ -1,6 +1,8 @@
 /* ── Reset & base ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+::selection { background: var(--accent-soft); color: var(--text); }
+
 /* ── Palette — dusk ──────────────────────────────────────────
    A warm rose/terracotta ground with two accent families:
    · primary  — terracotta reds, for links and interactive
@@ -522,4 +524,10 @@ a.work-item-title:hover { color: var(--accent); }
     grid-template-columns: 1fr;
     gap: 0.25rem;
   }
+  .site-nav { gap: 1rem; }
+}
+
+@media (max-width: 380px) {
+  .site-header .container { flex-wrap: wrap; gap: 0.5rem; }
+  .site-nav { gap: 0.75rem; }
 }
