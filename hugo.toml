@@ -34,3 +34,7 @@ timeZone = "Asia/Kolkata"
     name = "Blog"
     url = "/blog/"
     weight = 2
+  [[menu.main]]
+    name = "Work"
+    url = "/work/"
+    weight = 3

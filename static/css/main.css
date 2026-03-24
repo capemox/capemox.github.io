@@ -421,6 +421,101 @@ body {
   margin: 1.5rem 0;
 }
 
+/* ── Work page ── */
+.work-section {
+  margin-bottom: 3rem;
+}
+
+.work-section + .work-section {
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.work-section-title {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.work-list { list-style: none; }
+
+.work-item {
+  padding: 1rem 0;
+}
+
+.work-item + .work-item {
+  border-top: 1px dashed var(--border-faint);
+}
+
+.work-item-main {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.work-item-title {
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--text);
+  text-decoration: none;
+}
+
+a.work-item-title:hover { color: var(--accent); }
+
+.work-item-venue {
+  font-size: 0.82rem;
+  color: var(--sage);
+  font-style: italic;
+}
+
+.work-item-description {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 0.3rem;
+  line-height: 1.6;
+}
+
+.work-item-meta {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.3rem;
+}
+
+.work-item-year {
+  font-size: 0.8rem;
+  color: var(--faint);
+}
+
+.work-item-authors {
+  font-size: 0.8rem;
+  color: var(--faint);
+}
+
+.work-item-tags {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.work-tag {
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--sage);
+  background: var(--surface);
+  padding: 0.1em 0.5em;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+}
+
 /* ── Responsive ── */
 @media (max-width: 520px) {
   .post-item {

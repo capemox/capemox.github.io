@@ -1,0 +1,66 @@
+{{ define "main" }}
+<div class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.description }}
+  <p class="page-description">{{ . }}</p>
+  {{ end }}
+</div>
+
+{{ with .Params.papers }}
+<section class="work-section">
+  <h2 class="work-section-title">Papers</h2>
+  <ul class="work-list">
+    {{ range . }}
+    <li class="work-item">
+      <div class="work-item-main">
+        {{ if .url }}
+        <a href="{{ .url }}" class="work-item-title" target="_blank" rel="noopener">{{ .title }}</a>
+        {{ else }}
+        <span class="work-item-title">{{ .title }}</span>
+        {{ end }}
+        {{ with .venue }}
+        <span class="work-item-venue">{{ . }}</span>
+        {{ end }}
+      </div>
+      {{ with .description }}
+      <p class="work-item-description">{{ . }}</p>
+      {{ end }}
+      <div class="work-item-meta">
+        {{ with .year }}<span class="work-item-year">{{ . }}</span>{{ end }}
+        {{ with .coauthors }}<span class="work-item-authors">{{ . }}</span>{{ end }}
+      </div>
+    </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
+
+{{ with .Params.projects }}
+<section class="work-section">
+  <h2 class="work-section-title">Projects</h2>
+  <ul class="work-list">
+    {{ range . }}
+    <li class="work-item">
+      <div class="work-item-main">
+        {{ if .url }}
+        <a href="{{ .url }}" class="work-item-title" target="_blank" rel="noopener">{{ .title }}</a>
+        {{ else }}
+        <span class="work-item-title">{{ .title }}</span>
+        {{ end }}
+        {{ with .tags }}
+        <span class="work-item-tags">
+          {{ range . }}<span class="work-tag">{{ . }}</span>{{ end }}
+        </span>
+        {{ end }}
+      </div>
+      {{ with .description }}
+      <p class="work-item-description">{{ . }}</p>
+      {{ end }}
+    </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
+
+{{ .Content }}
+{{ end }}
